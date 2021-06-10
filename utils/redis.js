@@ -1,5 +1,5 @@
-import redis from 'redis';
-import { promisify } from 'util';
+const redis = require('redis');
+const { promisify } = require('util');
 
 class RedisClient {
   constructor() {
@@ -8,10 +8,6 @@ class RedisClient {
     this.client.on('error', function(error) {
         console.log(`Redis client not connected to the server: ${error}`);
     });
-   /*  this.client.on('ready', function()  {
-    console.log('Redis client connected to the server');
-}); */
- 
   }
 
     isAlive() {
